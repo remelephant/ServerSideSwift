@@ -20,8 +20,8 @@ extension Droplet {
 
         get("description") { req in return req.description }
         
-        post("addPet") { req in
-            return "Hello, world!"
+        get("addPet") { req in
+            return try self.view.make("new.leaf")
         }
         
         try resource("posts", PostController.self)
